@@ -1,0 +1,102 @@
+/*-------- VIEWS -------------*/
+
+/**************************
+-> APP.vue
+**************************/
+.banner-div {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.banner-img {
+  position: absolute;
+  width:100%;
+}
+/*-------- COMPONENTS ---------*/
+
+/**************************
+-> HEADER
+**************************/
+
+.header-router-link {
+  background-color: #2d3444;
+  display: inline-block;
+  width: 120px;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.header-nav {
+  width: 50%;
+  min-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.router-link-exact-active {
+  background-color: white;
+  color: #2d3444;
+}
+
+/**************************
+-> SECTION
+**************************/
+
+.section-template {
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #2d3444;
+}
+
+.section-title {
+  text-align: center;
+  margin:auto;
+}
+
+/**************************
+-> IMG
+**************************/
+.image-template {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 7.5px #2d3444;
+  overflow: hidden;
+}
+
+.profile-pic {
+  display: block;
+  margin-top: -25px;
+  width: 100%;
+}
+
+/**************************
+-> MEDIA QUERY
+**************************/
+
+/* MEDIA QUERY FOR LARGE DESKTOP */
+@media only screen and (max-width:1200px){
+
+}
+
+/* MEDIA QUERY FOR LARGE TABLETS AND SMALL DESKTOP */
+@media only screen and (max-width:992px){
+
+}
+
+/* MEDIA QUERY FOR TABLETS */
+@media only screen and (max-width:768px){
+
+}
+
+/* MEDIA QUERY FOR MOBILE */
+@media only screen and (max-width:640px){
+
+}
