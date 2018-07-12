@@ -1,6 +1,6 @@
 <template>
   <div class="image-template">
-    <div v-if="profilePic != ''" class="profile-pic">
+    <div v-if="profilePic != ''" :class="['profile-pic', 'half-top']">
       <div class="profile-pic-top"></div>
       <div class="pic-img-container">
         <img class="profile-pic-img" src="../assets/images/oli.jpg" alt="Profile picture of Olivier Lepage">

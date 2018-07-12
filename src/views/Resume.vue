@@ -2,8 +2,9 @@
   <div class="">
     <Header />
     <Banner></Banner>
-    <Section title="" bgColor="" width="">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <Img profile-pic="true" minus-top="true"/>
+    <Section title="Work experience" bgColor="" width="">
+      <Experience />
     </Section>
   </div>
 </template>
@@ -12,20 +13,17 @@
 
 import Header from '@/components/Header'
 import Banner from '@/components/Banner'
-import Section from '@/components/Section'
-import Card from '@/components/Card'
 import Img from '@/components/Img'
+import Section from '@/components/Section'
 import Experience from '@/components/Experience'
-import image from '@/assets/images/oli.jpg'
+import Card from '@/components/Card'
 
 export default {
-  name: 'Homepage',
+  name: 'Resume',
   components: { Header, Section, Img, Card, Experience, Banner },
   props: [],
   data () {
-    return {
-      image: image
-    }
+    return {}
   },
 
   /**************************

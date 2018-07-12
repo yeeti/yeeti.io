@@ -4,21 +4,18 @@
 -> APP.vue
 **************************/
 .banner-div {
-  position: relative;
   width: 100%;
-  height: 300px;
-  max-height: 300px;
-  opacity: 0.75;
-  background-color: #2d3444;
+  height: 500px;
+  max-height: 500px;
+  background: url('../images/code-color.png') fixed 0px 50px;
+  filter: blur(2.5px);
 }
 
-.banner-img {
-  position: fixed;
-  z-index: -1;
+.banner-filter {
   width: 100%;
-  min-width: 900px;
-  left: 0px;
-  top: 40px;
+  height: 100%;
+  background-color: #2d3444;
+  opacity: 0.60;
 }
 /*-------- COMPONENTS ---------*/
 
@@ -103,7 +100,11 @@
 
 .profile-pic-bot {
   height: 50%;
-  background-color: #2d3444;
+  background-color: white;
+}
+
+.half-top {
+  top: -155px;
 }
 
 /**************************

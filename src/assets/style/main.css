@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Roboto+Mono|Slabo+27px|Source+Code+Pro');
 /*So that elements of a set WIDTH will have the right width even with padding*/
-*{
+* {
 	box-sizing:border-box;
 }
 /*If the browser doesnt know how to handle the recent element, it will behave as a block*/
@@ -17,6 +18,10 @@ a {
 li {
   list-style: none;
   display: inline-block;
+}
+
+#app {
+	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
 
 /*clearfix hack!*/
