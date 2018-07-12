@@ -1,16 +1,12 @@
 <template>
   <div class="">
     <Header />
+    <img class="banner-img" src="../assets/images/web-dev.png" alt="">
     <div class="banner-div">
-      <img class="banner-img" src="../assets/images/web-dev.png" alt="">
     </div>
-    <Section bgColor="#ffffff00">
-
-    </Section>
-    <Section title="Welcome to yeeti.io!" bgColor="" width="">
-      <div>
-        <Img :src="image" />
-      </div>
+    <Section title="Hi! I'm Olivier Lepage" bgColor="" width="">
+      <Img profile-pic="true" />
+      <Experience />
     </Section>
   </div>
 </template>
@@ -19,12 +15,14 @@
 
 import Header from '@/components/Header'
 import Section from '@/components/Section'
+import Card from '@/components/Card'
 import Img from '@/components/Img'
+import Experience from '@/components/Experience'
 import image from '@/assets/images/oli.jpg'
 
 export default {
   name: 'Homepage',
-  components: {Header, Section, Img},
+  components: {Header, Section, Img, Card, Experience},
   props: [],
   data () {
     return {
