@@ -1,0 +1,17 @@
+{
+  "experiences":
+  [
+    {
+      "title": "Web / Mobile Developer Jr.",
+      "company": "Magnus Chemicals",
+      "languages": ["Vue.js", "Swift", "C#", "ASP.NET", "SQLServer", "Node.js"],
+      "ide": ["Atom", "VS Code", "Visual Studio", "XCode"],
+      "technologies": ["AWSS3", "Bluetooth", "Jira", "Jenkins"],
+      "projectManagement": ["Scrum", "Agile"],
+      "description": "Create a new data entry web platform & iOS bluetooth app for water sampling & analysis. The web platform was designed to manage inventory & create costumer reports",
+      "dateSart": "2017-11-06",
+      "dateEnd": "2018-05-11",
+      "details": "bla bla bla"
+    }
+  ]
+}

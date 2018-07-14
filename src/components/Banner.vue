@@ -2,6 +2,7 @@
   <div class="banner-div">
     <div class="banner-filter">
     </div>
+    <slot></slot>
   </div>
 </template>
 

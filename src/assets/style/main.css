@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Roboto+Mono|Slabo+27px|Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|Roboto|Roboto+Mono|Slabo+27px|Source+Code+Pro|Sanchez');
 /*So that elements of a set WIDTH will have the right width even with padding*/
 * {
 	box-sizing:border-box;
@@ -22,6 +22,10 @@ li {
 
 #app {
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+.span-block {
+	display: block;
 }
 
 /*clearfix hack!*/
