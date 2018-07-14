@@ -10,7 +10,7 @@
     <Img profile-pic="true" minus-top="true"/>
     <p>{{'Top skills: Vue.js, Node.js, Mobile Development iOS & Android, Bilingual French & English'}}</p>
     <Section title="Work experience" bgColor="" width="">
-      <Experience />
+      <TabContainer />
     </Section>
   </div>
 </template>
@@ -23,12 +23,11 @@ import Img from '@/components/Img'
 import Section from '@/components/Section'
 import Experience from '@/components/Experience'
 import Card from '@/components/Card'
-
-import Circley from '@/components/shapes/Circley'
+import TabContainer from '@/components/TabContainer'
 
 export default {
   name: 'Resume',
-  components: { Header, Section, Img, Card, Experience, Banner, Circley },
+  components: { Header, Section, Img, Card, Experience, Banner, TabContainer },
   props: [],
   data () {
     return {}
