@@ -165,10 +165,12 @@
   padding: 20px;
   width: 25%;
   text-align: center;
+  cursor: pointer;
 }
 .current-tab {
-  background-color: white;
+  background-color: #bbc4da;
   color: #2d3444;
+  font-weight: bold;
 }
 /**************************
 -> MEDIA QUERY

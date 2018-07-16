@@ -1,6 +1,6 @@
 <template>
   <div class="">
-
+    <slot></slot>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: '',
   components: {},
-  props: [],
+  props: {},
   data () {
     return {}
   },
@@ -32,3 +32,7 @@ export default {
 
 <style lang="css">
 </style>
+
+<!-- WIKI
+slot: always put the property slot. it defines if the tab is shown or not
+ -->

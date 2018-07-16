@@ -10,7 +10,14 @@
     <Img profile-pic="true" minus-top="true"/>
     <p>{{'Top skills: Vue.js, Node.js, Mobile Development iOS & Android, Bilingual French & English'}}</p>
     <Section title="Work experience" bgColor="" width="">
-      <TabContainer />
+      <TabContainer :tabs="tabs">
+        <Tab slot="tab1">
+          jsd;flkajsdfl;kajsdfl;kjasdlfk
+        </Tab>
+        <Tab slot="tab2" class="">
+          heheheh
+        </Tab>
+      </TabContainer>
     </Section>
   </div>
 </template>
@@ -24,13 +31,16 @@ import Section from '@/components/Section'
 import Experience from '@/components/Experience'
 import Card from '@/components/Card'
 import TabContainer from '@/components/TabContainer'
+import Tab from '@/components/Tab'
 
 export default {
   name: 'Resume',
-  components: { Header, Section, Img, Card, Experience, Banner, TabContainer },
+  components: { Header, Section, Img, Card, Experience, Banner, TabContainer, Tab },
   props: [],
   data () {
-    return {}
+    return {
+      tabs: ['tab1', 'tab2', 'tab3', 'tab4']
+    }
   },
 
   /**************************

@@ -7,7 +7,7 @@
           @click="focusTab(tab)" >{{tab}}</li>
     </ul>
     <div v-for="(tab, index) in tabs" :class="[currentTab == tab ? 'showing' : 'hidden']">
-      {{ tabContent[index] }}
+      <slot :name="tab"></slot>
     </div>
   </div>
 </template>
@@ -17,11 +17,15 @@
 export default {
   name: '',
   components: {},
-  props: [],
+  props: {
+    tabs: {
+      type: Array,
+      required: true
+    }
+  },
   data () {
     return {
       currentTab: 'tab1',
-      tabs: ['tab1', 'tab2', 'tab3', 'tab4'],
       tabContent: ['baap', 'suh', 'mah dood', 'memes']
     }
   },
