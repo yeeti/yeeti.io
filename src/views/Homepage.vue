@@ -3,7 +3,12 @@
     <Header />
     <Banner></Banner>
     <Section title="" bgColor="" width="">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <div class="logo">
+        <div class="name-logo">
+          <span>yeeti.io</span>
+        </div>
+      </div>
+      <h2 class="hp-title">Because the world needs pretty, modern and affordable websites.</h2>
     </Section>
   </div>
 </template>
@@ -44,4 +49,16 @@ export default {
 </script>
 
 <style lang="css">
+  .hp-title {
+    font-weight: normal;
+    font-style: italic;
+  }
+
+  .name-logo{
+    font-weight: bold;
+    position: absolute;
+    bottom: 75px;
+    right: 45px;
+    padding: 10px;
+  }
 </style>

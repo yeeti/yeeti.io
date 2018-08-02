@@ -2,18 +2,38 @@
 /*So that elements of a set WIDTH will have the right width even with padding*/
 * {
 	box-sizing:border-box;
+	/* BEIGE & DARK BLUE */
+	--main-color: #E8E8E8;
+	/* --secondary-color: #2d3444; */
+	--secondary-color: #273848;
+
+	/* YELLOWISH & DARK BLUE GRAY */
+	/* really like this one*/
+	/* --main-color: #273848;  */
+	/* --secondary-color: #f4f9a8; */
+	/* --secondary-color: #F2F898; */
+	/* --secondary-color: #fff; */
+
+
+	/* AQUA GREEN & DARK BLUE GRAY */
+	/* --main-color: #273848;
+	--secondary-color: #3EEBAC; */
+
+	/* DARK BLUE & POWDER BLUE */
+	/* --main-color: #0F2028;
+	--secondary-color: #83A6A7; */
 }
 /*If the browser doesnt know how to handle the recent element, it will behave as a block*/
 article, aside, details, figcaption, figure, footer, header, main, nav, section { display: block; }
 /*Sets the bodys margins to 0*/
 body {
   margin: 0;
-  background-color: #2d3444;
+  background-color: var(--main-color);
   position: relative;
 }
 a {
   text-decoration: none;
-  color: white;
+  color: var(--secondary-color);
 }
 ul {
 	padding: 0
@@ -23,9 +43,15 @@ li {
   display: inline-block;
 }
 
+h1,h2,h3,h4,h5,h6 { text-align: center;}
+
 #app {
 	font-family: 'Roboto', Helvetica, Arial, sans-serif;
 }
+
+.main-color { color: var(--main-color); }
+
+.secondary-color { color: var(--secondary-color); }
 
 .hidden {
 	display: none;

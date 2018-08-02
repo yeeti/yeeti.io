@@ -14,9 +14,10 @@ export default {
   data () {
     return {
       sectionStyle: {
-        backgroundColor: this.bgColor !== '' ? this.bgColor : 'white',
+        backgroundColor: this.bgColor !== '' ? this.bgColor : 'var(--secondary-color)'
+        /* ,
         width: this.width !== '' ? this.width + 'px' : '100%',
-        minWidth: '50%'
+        minWidth: '50%' */
       }
     }
   },

@@ -18,9 +18,9 @@ export default {
   data () {
     return {
       headerLinks: [
-        { name: 'homepage', displayName: 'Home', styleClasses: {}, params: {} },
         { name: 'aboutUs', displayName: 'About us', styleClasses: {}, params: {} },
         { name: 'projects', displayName: 'Projects', styleClasses: {}, params: {} },
+        { name: 'homepage', displayName: 'Home', styleClasses: {}, params: {} },
         { name: 'resume', displayName: 'Resume', styleClasses: {}, params: {} },
         { name: 'partners', displayName: 'Partners', styleClasses: {}, params: {} }
       ]

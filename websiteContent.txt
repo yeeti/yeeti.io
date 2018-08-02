@@ -1,0 +1,19 @@
+---------------------
+-> INTRO TEXT
+---------------------
+Because the world needs pretty, modern and affordable websites.
+
+---------------------
+-> SERVICES
+---------------------
+1. Analysis of your needs with an estimate time of development
+2. Web design & visual preview of desired layout
+3. Full development of the platform
+4. Search engine optimization (SEO)
+5. Database integration
+6. Deployment with custom domain name
+
+--------------------
+-> Word from the developer
+--------------------
+I am Olivier Lepage. I started yeeti.io to kickoff my career as a web developer.  I offer website development services.
