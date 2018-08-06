@@ -1,6 +1,8 @@
 <template>
   <div class="pos-relative">
-    <Logo />
+    <font-awesome-icon :icon="['fab', 'github']" size="2x" style="color: var(--main-color);" />
+    <font-awesome-icon :icon="['fab', 'linkedin']" size="2x" style="color: var(--main-color);" />
+    <font-awesome-icon :icon="['fab', 'twitter']" size="2x" style="color: var(--main-color);" />
     <nav class="header-nav">
       <li v-for="item in headerLinks"
           :key="item.name">
