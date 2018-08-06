@@ -24,28 +24,6 @@
 -> HEADER
 **************************/
 
-.header-router-link {
-  background-color: var(--main-color);
-  display: inline-block;
-  width: 120px;
-  padding: 10px;
-  /* font-weight: bold; */
-}
-
-.header-nav {
-  width: 50%;
-  min-width: 600px;
-  margin: auto;
-  text-align: center;
-}
-
-.router-link-exact-active {
-  /* background-color: var(--secondary-color); */
-  font-weight: bold;
-  border-bottom: solid 3px var(--secondary-color);
-  /* color: var(--main-color); */
-}
-
 /**************************
 -> SECTION
 **************************/
@@ -137,8 +115,8 @@
 
 .logo {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   margin: auto;
   color: var(--secondary-color);

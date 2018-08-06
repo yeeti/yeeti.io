@@ -1,14 +1,16 @@
 <template>
-  <div class="">
+  <div class="image-background-static" :style="{height: height}">
     <Header />
     <Banner></Banner>
-    <Section title="" bgColor="" width="">
-      <div class="logo">
-        <div class="name-logo">
-          <span>yeeti.io</span>
-        </div>
+    <!-- <div class="logo">
+      <div class="name-logo">
+        <span>yeeti.io</span>
       </div>
+    </div> -->
+    <div class="middle-title" :style="titleMargin">
       <h2 class="hp-title">Because the world needs pretty, modern and affordable websites.</h2>
+    </div>
+    <Section title="" bgColor="0" width="">
     </Section>
   </div>
 </template>
@@ -29,7 +31,9 @@ export default {
   props: [],
   data () {
     return {
-      image: image
+      image: image,
+      height: (window.innerHeight - 1) + 'px',
+      titleMargin: { marginTop: 200 + 'px' }
     }
   },
 
@@ -49,9 +53,11 @@ export default {
 </script>
 
 <style lang="css">
+
   .hp-title {
     font-weight: normal;
     font-style: italic;
+    color: var(--main-color);
   }
 
   .name-logo{

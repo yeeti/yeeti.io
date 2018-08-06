@@ -43,4 +43,12 @@ export default {
 </script>
 
 <style lang="css">
+
+.header-nav {
+  width: 50%;
+  min-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
 </style>
