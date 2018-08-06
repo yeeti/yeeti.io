@@ -2,5 +2,5 @@
 -> HOMEPAGE
 **************************/
 .image-background-static {
-  background: url('../images/sunset-montreal-downtown.jpg') fixed 0px 0px;
+  background: url('../images/sunset-montreal-downtown.jpg') no-repeat fixed 0px 0px;
 }

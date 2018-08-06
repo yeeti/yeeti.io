@@ -112,17 +112,6 @@
   position: absolute;
   border-radius: 50%;
 }
-
-.logo {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: auto;
-  color: var(--secondary-color);
-  font-size: 30px;
-  background-color: var(--main-color);
-}
 /**************************
 -> RESUME
 **************************/

@@ -2,11 +2,6 @@
   <div class="image-background-static" :style="{height: height}">
     <Header />
     <Banner></Banner>
-    <!-- <div class="logo">
-      <div class="name-logo">
-        <span>yeeti.io</span>
-      </div>
-    </div> -->
     <div class="middle-title" :style="titleMargin">
       <h2 class="hp-title">Because the world needs pretty, modern and affordable websites.</h2>
     </div>
@@ -20,6 +15,7 @@
 import Header from '@/components/Header'
 import Banner from '@/components/Banner'
 import Section from '@/components/Section'
+import Logo from '@/components/Logo'
 import Card from '@/components/Card'
 import Img from '@/components/Img'
 import Experience from '@/components/Experience'
@@ -27,7 +23,7 @@ import image from '@/assets/images/oli.jpg'
 
 export default {
   name: 'Homepage',
-  components: { Header, Section, Img, Card, Experience, Banner },
+  components: { Header, Section, Img, Card, Experience, Banner, Logo },
   props: [],
   data () {
     return {
@@ -60,11 +56,4 @@ export default {
     color: var(--main-color);
   }
 
-  .name-logo{
-    font-weight: bold;
-    position: absolute;
-    bottom: 75px;
-    right: 45px;
-    padding: 10px;
-  }
 </style>

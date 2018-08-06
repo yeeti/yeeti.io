@@ -1,5 +1,6 @@
 <template>
-  <div class="">
+  <div class="pos-relative">
+    <Logo />
     <nav class="header-nav">
       <li v-for="item in headerLinks"
           :key="item.name">
@@ -10,10 +11,10 @@
 </template>
 
 <script>
-// import Test from './something'
+import Logo from '@/components/Logo'
 export default {
   name: 'Header',
-  components: {},
+  components: { Logo },
   props: [],
   data () {
     return {
