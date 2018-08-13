@@ -29,8 +29,8 @@ export default new Router({
       component: Resume
     },
     {
-      path: '/partners',
-      name: 'partners',
+      path: '/services',
+      name: 'services',
       component: Homepage
     }
   ]
