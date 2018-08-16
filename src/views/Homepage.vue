@@ -11,6 +11,7 @@
     </div>
     <Section title="" bgColor="white" width="">
       <ProductDesc />
+      <DropdownMenu title="DROPDOWN" :menuItems="this.menuItems"/>
     </Section>
   </div>
 </template>
@@ -21,6 +22,7 @@ import Header from '@/components/Header'
 import Banner from '@/components/Banner'
 import Section from '@/components/Section'
 import ProductDesc from '@/components/ProductDesc'
+import DropdownMenu from '@/components/DropdownMenu/DropdownMenu'
 import Logo from '@/components/Logo'
 import Card from '@/components/Card'
 import Img from '@/components/Img'
@@ -29,14 +31,24 @@ import image from '@/assets/images/oli.jpg'
 
 export default {
   name: 'Homepage',
-  components: { Header, Section, Img, Card, Experience, Banner, Logo, ProductDesc },
+  components: { Header, Section, Img, Card, Experience, Banner, Logo, ProductDesc, DropdownMenu },
   props: [],
   data () {
     return {
       image: image,
       height: (window.innerHeight - 1) + 'px',
       // height: '500px',
-      titleMargin: { marginTop: 150 + 'px' }
+      titleMargin: { marginTop: 150 + 'px' },
+      menuItems:
+      [
+        {
+          title: 'Products',
+          target: {
+            type: 'href',
+            link: 'https://google.com'
+          }
+        }
+      ]
     }
   },
 
@@ -47,7 +59,8 @@ export default {
   beforeCreate () {},
   created () {},
   beforeMount () {},
-  mounted () {},
+  mounted () {
+  },
   beforeUpdate () {},
   updated () {},
   beforeDestroy () {},
