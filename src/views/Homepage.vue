@@ -10,8 +10,9 @@
       </div>
     </div>
     <Section title="" bgColor="white" width="">
+      <YeDropdown title="DROPDOWN" :menuItems="this.menuItems"/>
+      <YeTable :datasource="this.datasource"/>
       <ProductDesc />
-      <DropdownMenu title="DROPDOWN" :menuItems="this.menuItems"/>
     </Section>
   </div>
 </template>
@@ -22,7 +23,8 @@ import Header from '@/components/Header'
 import Banner from '@/components/Banner'
 import Section from '@/components/Section'
 import ProductDesc from '@/components/ProductDesc'
-import DropdownMenu from '@/components/DropdownMenu/DropdownMenu'
+import YeDropdown from '@/components/DropdownMenu/YeDropdown'
+import YeTable from '@/components/YeTable'
 import Logo from '@/components/Logo'
 import Card from '@/components/Card'
 import Img from '@/components/Img'
@@ -31,7 +33,7 @@ import image from '@/assets/images/oli.jpg'
 
 export default {
   name: 'Homepage',
-  components: { Header, Section, Img, Card, Experience, Banner, Logo, ProductDesc, DropdownMenu },
+  components: { Header, Section, Img, Card, Experience, Banner, Logo, ProductDesc, YeDropdown, YeTable },
   props: [],
   data () {
     return {
@@ -42,12 +44,33 @@ export default {
       menuItems:
       [
         {
-          title: 'Products',
-          target: {
-            type: 'href',
-            link: 'https://google.com'
-          }
+          title: 'Go to google',
+          type: 'href',
+          link: 'https://google.com'
+        },
+        {
+          title: 'Services',
+          type: 'router-link',
+          routerObj: {name: 'services', params: {}}
         }
+      ],
+      datasource:
+      [
+        { cell1: 'CELL1.1', cell2: 'CELL1.2', cell3: 'CELL1.3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL2.1', cell2: 'CELL2.2', cell3: 'CELL2.3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
+        { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' }
       ]
     }
   },
