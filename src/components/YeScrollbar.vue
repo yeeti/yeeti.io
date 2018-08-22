@@ -1,6 +1,7 @@
 <template>
-  <div id="scrollbar" class="scrollbar-container" :style="barStyle" @scroll="onScroll">
-
+  <div class="">
+    <div class="scrollbar-container" :style="barStyle"/>
+    <div class="scrollbar-bean" :style="beanStyle"/>
   </div>
 </template>
 
@@ -15,12 +16,19 @@ export default {
       barStyle: {
         height: '100px',
         top: '10px'
-      }
+      },
+      beanStyle: {
+        height: '10px',
+        top: '10px'
+      },
+      offset: 10,
+      beanHeight: 0
     }
   },
   methods: {
     onScroll: function (event) {
-      console.log(event)
+      this.barStyle.top = this.offset + event.target.scrollTop + 'px'
+      this.beanStyle.top = (((event.target.scrollTop / event.target.scrollTopMax) * (event.target.clientHeight - 20 - this.beanHeight)) + (10 + event.target.scrollTop)) + 'px'
     }
   },
   computed: {},
@@ -39,7 +47,9 @@ export default {
     this.$nextTick(function () {
       let parent = this.$el.parentElement
       parent.addEventListener('scroll', this.onScroll)
+      this.beanHeight = ((parent.clientHeight / parent.scrollTopMax) * 100) - 20
       this.barStyle.height = (parent.clientHeight - 20) + 'px'
+      this.beanStyle.height = this.beanHeight + 'px'
     })
   },
   beforeUpdate () {},
@@ -53,9 +63,20 @@ export default {
 <style lang="css">
 
   .scrollbar-container {
+    position: absolute;
+    width: 10px;
+    right: 7.5px;
+    background-color: darkgrey;
+    border-radius: 5px;
+    opacity: 0.65;
+    box-shadow: 1px 1px 5px darkgrey;
+  }
+
+  .scrollbar-bean {
     width: 10px;
     position: absolute;
-    right: 5px;
-    background-color: black;
+    right: 7.5px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
   }
 </style>
