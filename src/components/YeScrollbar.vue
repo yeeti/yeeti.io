@@ -28,7 +28,7 @@ export default {
   methods: {
     onScroll: function (event) {
       this.barStyle.top = this.offset + event.target.scrollTop + 'px'
-      this.beanStyle.top = (((event.target.scrollTop / event.target.scrollTopMax) * (event.target.clientHeight - 20 - this.beanHeight)) + (10 + event.target.scrollTop)) + 'px'
+      this.beanStyle.top = (((event.target.scrollTop / (event.target.scrollHeight - event.target.clientHeight)) * (event.target.clientHeight - 20 - this.beanHeight)) + (10 + event.target.scrollTop)) + 'px'
     }
   },
   computed: {},
@@ -47,7 +47,7 @@ export default {
     this.$nextTick(function () {
       let parent = this.$el.parentElement
       parent.addEventListener('scroll', this.onScroll)
-      this.beanHeight = ((parent.clientHeight / parent.scrollTopMax) * 100) - 20
+      this.beanHeight = ((parent.clientHeight / (parent.scrollHeight - parent.clientHeight)) * 100) - 20
       this.barStyle.height = (parent.clientHeight - 20) + 'px'
       this.beanStyle.height = this.beanHeight + 'px'
     })
