@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="" :style="displayStyle">
     <div class="scrollbar-container" :style="barStyle"/>
     <div class="scrollbar-bean" :style="beanStyle"/>
   </div>
@@ -21,6 +21,10 @@ export default {
         height: '10px',
         top: '10px'
       },
+      displayStyle: {
+        opacity: 0,
+        transition: '0.1s opacity'
+      },
       offset: 10,
       beanHeight: 0
     }
@@ -28,7 +32,13 @@ export default {
   methods: {
     onScroll: function (event) {
       this.barStyle.top = this.offset + event.target.scrollTop + 'px'
-      this.beanStyle.top = (((event.target.scrollTop / event.target.scrollTopMax) * (event.target.clientHeight - 20 - this.beanHeight)) + (10 + event.target.scrollTop)) + 'px'
+      this.beanStyle.top = (((event.target.scrollTop / (event.target.scrollHeight - event.target.clientHeight)) * (event.target.clientHeight - 20 - this.beanHeight)) + (10 + event.target.scrollTop)) + 'px'
+    },
+    onMouseEnter: function (event) {
+      this.displayStyle.opacity = 1
+    },
+    onMouseLeave: function (event) {
+      this.displayStyle.opacity = 0
     }
   },
   computed: {},
@@ -46,10 +56,13 @@ export default {
   mounted () {
     this.$nextTick(function () {
       let parent = this.$el.parentElement
-      parent.addEventListener('scroll', this.onScroll)
-      this.beanHeight = ((parent.clientHeight / parent.scrollTopMax) * 100) - 20
+      this.beanHeight = ((parent.clientHeight / (parent.scrollHeight - parent.clientHeight)) * 100) - 20
       this.barStyle.height = (parent.clientHeight - 20) + 'px'
       this.beanStyle.height = this.beanHeight + 'px'
+
+      parent.addEventListener('scroll', this.onScroll)
+      parent.addEventListener('mouseenter', this.onMouseEnter)
+      parent.addEventListener('mouseleave', this.onMouseLeave)
     })
   },
   beforeUpdate () {},
