@@ -1,17 +1,19 @@
 <template>
-  <div class="hide-scrollbar">
-    <table class="table-header">
+  <div class="">
+    <table name="header" title="header" class="table-header">
       <tr class="header-row">
         <th class="header-cell" v-for="(value, key) in datasource[0]" :key="key">{{ key }}</th>
       </tr>
     </table>
-    <div id="datatable" class="table-container">
-      <table class="table">
-        <tr class="row" v-for="row in datasource" :key="row.key">
-          <td class="cell" v-for="cell in row" :key="cell.key">{{ cell }}</td>
-        </tr>
-      </table>
-      <YeScrollbar />
+    <div class="hide-scrollbar">
+      <div name="table-container" title="table-container" class="table-container">
+        <table title="datatable" class="table">
+          <tr class="row" v-for="row in datasource" :key="row.key">
+            <td class="cell" v-for="cell in row" :key="cell.key">{{ cell }}</td>
+          </tr>
+        </table>
+        <YeScrollbar />
+      </div>
     </div>
   </div>
 </template>
@@ -44,9 +46,17 @@ export default {
   created () {},
   beforeMount () {},
   mounted () {
+    this.$nextTick(function () {
+      let children = this.$el.children
+      let header = children.namedItem('header')
+      let datatable = children.namedItem('table-container')
+
+      // datatable.style.height = datatable.clientHeight - header.clientHeight + 'px'
+    })
   },
   beforeUpdate () {},
-  updated () {},
+  updated () {
+  },
   beforeDestroy () {},
   destroyed () {}
 }
@@ -56,16 +66,23 @@ export default {
   .hide-scrollbar {
     position: relative;
     overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+    height: 500px;
     box-shadow: 5px 5px 10px #cdd0d7;
+    box-sizing: content-box;
   }
 
   .table-container {
     position: relative;
-    height: 300px;
+    /* height: calc(100% - 59px); */
+    height: 100%;
     width: 100%;
     box-sizing: content-box;
     overflow-y: scroll;
+    overflow-x: scroll;
     padding-right: 17px;
+    padding-bottom: 17px;
   }
 
   .table-header {
@@ -77,7 +94,8 @@ export default {
 
   .table {
     width: calc(100% + 17px);
-    height: 100%;
+    height: calc(100% + 17px);
+    display: block;
     border-collapse: collapse;
     text-align: center;
     color: var(--secondary-color);
@@ -104,5 +122,6 @@ export default {
   }
   .cell {
     padding: 15px;
+    min-width: 150px;
   }
 </style>
