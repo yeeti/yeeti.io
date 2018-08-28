@@ -56,7 +56,7 @@ export default {
       ],
       datasource:
       [
-        { cell1: 'CELL1.1', cell2: 'CELL1.2', cell3: 'CELL1.3', cell4: 'asdf', cell5: 'asdfasd', cell6: 'asdfasd', cell7: 'asdfasd' },
+        { cell1: 'CELL1.1', cell2: 'CELL1.2', cell3: 'CELL1.3', cell4: 'asdf', cell5: 'asdfasd' },
         { cell1: 'CELL2.1', cell2: 'CELL2.2', cell3: 'CELL2.3', cell4: 'asdf', cell5: 'asdfasd' },
         { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },
         { cell1: 'CELL1', cell2: 'CELL2', cell3: 'CELL3', cell4: 'asdf', cell5: 'asdfasd' },

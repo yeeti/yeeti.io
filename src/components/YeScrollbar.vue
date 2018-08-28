@@ -69,17 +69,13 @@ export default {
       }
     },
     onMouseEnter: function (event) {
-      if (this.clientHeight !== event.target.clientHeight) {
-        this.barSetup()
-      }
-
+      this.barSetup()
       this.displayStyle.opacity = 1
     },
     onMouseLeave: function (event) {
       this.displayStyle.opacity = 0
     },
     barSetup: function () {
-      console.log('bar setup')
       if (this.YbarShow) {
         this.clientHeight = this.$el.parentElement.clientHeight
         this.scrollHeight = this.$el.parentElement.scrollHeight
@@ -90,15 +86,12 @@ export default {
       }
     },
     getBeanHeight: function () {
-      return ((this.clientHeight / (this.scrollHeight - this.clientHeight)) * 100) - 20
+      // 17 is the thickness of the scrollbar, 20 is 2 times the offset
+      return ((this.clientHeight / (this.scrollHeight - this.clientHeight)) * 100) - (20 + 17)
     }
   },
   computed: {},
-  watch: {
-    clientHeight: function () {
-      console.log('clientHeight')
-    }
-  },
+  watch: {},
 
   /**************************
   -> LIFECYCLE METHODS
@@ -116,13 +109,13 @@ export default {
       this.YbarShow = parent.clientHeight < parent.scrollHeight
       this.XbarShow = parent.clientWidth < parent.scrollWidth
 
-      if (this.YbarShow || this.XbarShow) {
-        parent.addEventListener('scroll', this.onScroll)
-        parent.addEventListener('mouseenter', this.onMouseEnter)
-        parent.addEventListener('mouseleave', this.onMouseLeave)
+      parent.addEventListener('scroll', this.onScroll)
+      parent.addEventListener('mouseenter', this.onMouseEnter)
+      parent.addEventListener('mouseleave', this.onMouseLeave)
 
-        this.barSetup()
-      }
+      this.barSetup()
+      // if (this.YbarShow || this.XbarShow) {
+      // }
     })
   },
   beforeUpdate () {},
@@ -134,6 +127,14 @@ export default {
 </script>
 
 <style lang="css">
+
+  /* CUSTOM SCROLLBAR:
+  **  To make it happen with a table, we need 2 parent containers:
+  **    [div] 1   -> position: relative, overflow(-x/-y): hidden, box-sizing: content-box
+  **    [div] 2   -> position: relative, overflow(-x/-y): scroll, box-sizing: content-box,
+  **                 padding(-right/-bottom): 17px, height/width: 100%
+  **    [table] 3 -> position: absolute, width/height: 100%
+  */
 
   .scrollbar-container {
     position: absolute;

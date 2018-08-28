@@ -7,7 +7,7 @@
     </table>
     <div class="hide-scrollbar">
       <div name="table-container" title="table-container" class="table-container">
-        <table title="datatable" class="table">
+        <table title="datatable" class="table row">
           <tr class="row" v-for="row in datasource" :key="row.key">
             <td class="cell" v-for="cell in row" :key="cell.key">{{ cell }}</td>
           </tr>
@@ -47,11 +47,11 @@ export default {
   beforeMount () {},
   mounted () {
     this.$nextTick(function () {
-      let children = this.$el.children
-      let header = children.namedItem('header')
-      let datatable = children.namedItem('table-container')
-
-      // datatable.style.height = datatable.clientHeight - header.clientHeight + 'px'
+      // let children = this.$el.children
+      // let header = children.namedItem('header')
+      // let datatable = children.namedItem('table-container')
+      //
+      // datatable.style.height = datatable.clientHeight - 17 + 'px'
     })
   },
   beforeUpdate () {},
@@ -75,7 +75,6 @@ export default {
 
   .table-container {
     position: relative;
-    /* height: calc(100% - 59px); */
     height: 100%;
     width: 100%;
     box-sizing: content-box;
@@ -93,9 +92,9 @@ export default {
   }
 
   .table {
+    position: absolute;
     width: calc(100% + 17px);
-    height: calc(100% + 17px);
-    display: block;
+    height: 100%;
     border-collapse: collapse;
     text-align: center;
     color: var(--secondary-color);

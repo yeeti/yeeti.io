@@ -2,6 +2,7 @@
 /*So that elements of a set WIDTH will have the right width even with padding*/
 * {
 	box-sizing:border-box;
+	line-height: 20px;
 	/* BEIGE & DARK BLUE */
 	--main-color: #E8E8E8;
 	--secondary-color: #2d3444;
