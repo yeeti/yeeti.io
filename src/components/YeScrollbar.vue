@@ -2,15 +2,15 @@
   <div class="">
 
     <!-- Y scrollbar -->
-    <div v-if="this.YbarShow" class="" :style="displayStyle">
-      <div class="scrollbar-container" :style="YbarStyle"/>
-      <div class="scrollbar-bean" :style="YbeanStyle"/>
+    <div v-if="this.YbarShow" name="yBar" class="scrollbar" :style="displayStyle" >
+      <div class="scrollbar-container" :style="YbarStyle" />
+      <div name="yBean" class="scrollbar-bean" :style="YbeanStyle" draggable="true" v-on:dragstart="onDragStart" v-on:drag="onDragY"/>
     </div>
 
     <!-- X scrollbar -->
-    <div v-if="this.XbarShow" class="" :style="displayStyle">
-      <div class="scrollbar-container" :style="YbarStyle"/>
-      <div class="scrollbar-bean" :style="YbeanStyle"/>
+    <div v-if="this.XbarShow" name="xBar" class="" :style="displayStyle">
+      <div class="scrollbar-container" :style="XbarStyle"/>
+      <div name="xBean" class="scrollbar-bean" :style="XbeanStyle"/>
     </div>
   </div>
 </template>
@@ -36,10 +36,12 @@ export default {
       YbarShow: true,
       XbarStyle: {
         width: '100px',
+        bottom: '10px',
         left: '10px'
       },
       XbeanStyle: {
         width: '10px',
+        bottom: '10px',
         left: '10px'
       },
       XbarShow: true,
@@ -55,7 +57,7 @@ export default {
     }
   },
   methods: {
-    onScroll: function (event) {
+    onScroll (event) {
       if (this.YbarShow) {
         this.YbarStyle.top = this.offset + event.target.scrollTop + 'px'
         this.YbarStyle.right = 8 - event.target.scrollLeft + 'px'
@@ -68,14 +70,25 @@ export default {
 
       }
     },
-    onMouseEnter: function (event) {
+    onMouseEnter (event) {
       this.barSetup()
       this.displayStyle.opacity = 1
     },
-    onMouseLeave: function (event) {
+    onMouseLeave (event) {
       this.displayStyle.opacity = 0
     },
-    barSetup: function () {
+    onDragStart (event) {
+      var crt = event.target.cloneNode()
+      crt.style.display = 'none'
+      event.dataTransfer.effectAllowed = 'copyMove'
+      event.dataTransfer.setDragImage(crt, 0, 0)
+    },
+    onDragY (event) {
+      event.target.style.cursor = 'pointer'
+      event.dataTransfer.dropEffect = 'copy'
+      console.log('reeee')
+    },
+    barSetup () {
       if (this.YbarShow) {
         this.clientHeight = this.$el.parentElement.clientHeight
         this.scrollHeight = this.$el.parentElement.scrollHeight
@@ -85,7 +98,7 @@ export default {
         this.YbeanStyle.height = this.beanHeight + 'px'
       }
     },
-    getBeanHeight: function () {
+    getBeanHeight () {
       // 17 is the thickness of the scrollbar, 20 is 2 times the offset
       return ((this.clientHeight / (this.scrollHeight - this.clientHeight)) * 100) - (20 + 17)
     }
@@ -106,7 +119,7 @@ export default {
     this.$nextTick(function () {
       let parent = this.$el.parentElement
       console.log(parent)
-      this.YbarShow = parent.clientHeight < parent.scrollHeight
+      // this.YbarShow = parent.clientHeight < parent.scrollHeight
       this.XbarShow = parent.clientWidth < parent.scrollWidth
 
       parent.addEventListener('scroll', this.onScroll)
@@ -136,6 +149,13 @@ export default {
   **    [table] 3 -> position: absolute, width/height: 100%
   */
 
+  div.scrollbar-bean {
+    cursor: pointer !important;
+  }
+
+  .scrollbar {
+    width: 100%;
+  }
   .scrollbar-container {
     position: absolute;
     width: 10px;
@@ -143,6 +163,7 @@ export default {
     background-color: darkgrey;
     border-radius: 5px;
     opacity: 0.65;
+    z-index: 1000;
   }
 
   .scrollbar-bean {
@@ -151,5 +172,6 @@ export default {
     right: 7.5px;
     background-color: var(--secondary-color);
     border-radius: 5px;
+    z-index: 1001;
   }
 </style>
