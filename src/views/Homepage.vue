@@ -10,9 +10,11 @@
       </div>
     </div>
     <Section title="" bgColor="white" width="">
-      <YeDropdown title="DROPDOWN" :menuItems="this.menuItems"/>
+      <!-- <YeDropdown title="DROPDOWN" :menuItems="this.menuItems"/>
       <YeTable :datasource="this.datasource"/>
-      <ProductDesc />
+      <ProductDesc /> -->
+      <h2 class="desc">{{'Customizable web components and website creation.'}}</h2>
+      <p class="paragraph">With our skills and a little bit of magic, we will make the web prettier.</p>
     </Section>
   </div>
 </template>
@@ -124,6 +126,14 @@ export default {
   .rounded-button:hover {
     background-color: white;
     color: var(--secondary-color);
+  }
+
+  .desc, .paragraph {
+    color: var(--secondary-color);
+  }
+
+  .paragraph {
+    text-align: center;
   }
 
 </style>

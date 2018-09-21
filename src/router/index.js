@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
 import Homepage from '@/views/Homepage'
-import Resume from '@/views/Resume'
+import Components from '@/views/Components'
+// import Resume from '@/views/Resume'
 
 Vue.use(Router)
 
@@ -24,9 +24,9 @@ export default new Router({
       component: Homepage
     },
     {
-      path: '/resume',
-      name: 'resume',
-      component: Resume
+      path: '/components',
+      name: 'components',
+      component: Components
     },
     {
       path: '/services',

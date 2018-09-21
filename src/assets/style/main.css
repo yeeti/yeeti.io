@@ -23,13 +23,15 @@
 	/* DARK BLUE & POWDER BLUE */
 	/* --main-color: #0F2028;
 	--secondary-color: #83A6A7; */
+
+	/* ORANGE -> #f68b7d */
 }
 /*If the browser doesnt know how to handle the recent element, it will behave as a block*/
 article, aside, details, figcaption, figure, footer, header, main, nav, section { display: block; }
 /*Sets the bodys margins to 0*/
 body {
   margin: 0;
-  background-color: var(--main-color);
+  background-color: var(--secondary-color);
   position: relative;
 }
 a {

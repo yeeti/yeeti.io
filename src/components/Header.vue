@@ -27,7 +27,7 @@ export default {
         { name: 'projects', displayName: 'Projects', styleClasses: {}, params: {} },
         { name: 'homepage', displayName: 'Home', styleClasses: {}, params: {} },
         { name: 'services', displayName: 'Services', styleClasses: {}, params: {} },
-        { name: 'resume', displayName: 'Resume', styleClasses: {}, params: {} }
+        { name: 'components', displayName: 'Components', styleClasses: {}, params: {} }
       ]
     }
   },

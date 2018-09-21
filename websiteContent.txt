@@ -13,7 +13,30 @@ Because the world needs pretty, modern and affordable websites.
 5. Database integration
 6. Deployment with custom domain name
 
+---------------------
+-> Would be fkn nice:
+---------------------
+A library of view component, easily customizable and versatile.
+- Input text
+- Text field
+- Button
+- Switch on / off
+- Badges
+- Tags
+- Date picker
+- Radio Button
+- Combo box
+- Searchbox
+- Carousel
+- Side menu
+  ~ expand (text + icons) / collapse (icons only)
+- Table of matter menu
+  ~ Sectionable
+  ~ Snappable to right
+  ~ expand (text + icons) / collapse (icons only)
+- Table / Row / Cell?
 --------------------
 -> Word from the developer
 --------------------
-I am Olivier Lepage. I started yeeti.io to kickoff my career as a web developer.  I offer website development services.
+I am Olivier Lepage. I started yeeti.io to kickoff my career as a web developer.
+I offer website development services.
