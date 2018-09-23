@@ -21,8 +21,24 @@
 /*-------- COMPONENTS ---------*/
 
 /**************************
--> HEADER
+-> FORMS
 **************************/
+.form-border-bot {
+  width: 100%;
+  padding: 1px;
+  border-radius: 5px;
+  background-color: var(--yedarkblue-trans);
+  transition: background-color 0.35s;
+}
+
+.text-form {
+  width: calc(100%);
+  border: none;
+  font-size: 15px;
+  background-color: transparent;
+  line-height: 25px;
+  padding-top: 5px;
+}
 
 /**************************
 -> SECTION

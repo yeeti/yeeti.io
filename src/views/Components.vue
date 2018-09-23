@@ -11,8 +11,10 @@
     </Section>
 
     <!--  -->
-    <Section title="YeTextbox" bgColor="var(--main-color)">
+    <Section title="YeTextarea" bgColor="var(--main-color)">
       <div class="">
+        <YeTextarea />
+        <p>{{  }}</p>
       </div>
     </Section>
   </div>
@@ -23,10 +25,11 @@
 import Header from '@/components/Header'
 import Section from '@/components/Section'
 import YeTextbox from '@/components/YeTextbox'
+import YeTextarea from '@/components/YeTextarea'
 
 export default {
   name: '',
-  components: { Section, Header, YeTextbox },
+  components: { Section, Header, YeTextbox, YeTextarea },
   props: [],
   data () {
     return {
