@@ -1,7 +1,7 @@
 <template>
 <!-- WIKI: the 'bgColor' property set to nothing will return the projects main color var(-.-main-color) -->
   <section class="section-template" :style="sectionStyle">
-    <h2 class="section-title" v-if="title !== ''">{{ title }}</h2>
+    <h2 class="section-title title" v-if="title !== ''">{{ title }}</h2>
     <slot></slot>
   </section>
 </template>
@@ -45,4 +45,7 @@ export default {
 </script>
 
 <style lang="css">
+  .title {
+    color: var(--secondary-color);
+  }
 </style>
