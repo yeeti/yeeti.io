@@ -17,8 +17,7 @@ Because the world needs pretty, modern and affordable websites.
 -> Would be fkn nice:
 ---------------------
 A library of view component, easily customizable and versatile.
-- Input text
-- Text field
+- Input text [X]
 - Button
 - Switch on / off
 - Badges

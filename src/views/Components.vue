@@ -5,16 +5,24 @@
     <!-- YeTextbox -->
     <Section title="YeTextbox" bgColor="var(--main-color)">
       <div class="">
-        <YeTextbox v-model="inputValue" placeholder="I'm a custom placeholder"/>
-        <p>{{ `Value: ${inputValue}` }}</p>
+        <YeTextbox v-model="yeTextboxValue" placeholder="I'm a custom placeholder for YeTextbox"/>
+        <p>{{ `Value: ${yeTextboxValue}` }}</p>
       </div>
     </Section>
 
-    <!--  -->
+    <!-- YeTextarea -->
     <Section title="YeTextarea" bgColor="var(--main-color)">
       <div class="">
-        <YeTextarea />
-        <p>{{  }}</p>
+        <YeTextarea v-model="yeTextareaValue" placeholder="I'm a custom placeholder for YeTextarea"/>
+        <p>{{ `Value: ${yeTextareaValue}` }}</p>
+      </div>
+    </Section>
+
+    <!-- YeButton -->
+    <Section title="YeButton" bgColor="var(--main-color)">
+      <div class="">
+        <YeButton text="Click here!" :action="this.yeButtonFct"/>
+        <p>{{ `Value: ${yeButtonValue}` }}</p>
       </div>
     </Section>
   </div>
@@ -24,19 +32,30 @@
 
 import Header from '@/components/Header'
 import Section from '@/components/Section'
+import YeButton from '@/components/YeButton'
 import YeTextbox from '@/components/YeTextbox'
 import YeTextarea from '@/components/YeTextarea'
 
 export default {
   name: '',
-  components: { Section, Header, YeTextbox, YeTextarea },
+  components: { Section, Header, YeTextbox, YeTextarea, YeButton },
   props: [],
   data () {
     return {
-      inputValue: ''
+      yeTextboxValue: '',
+      yeTextareaValue: '',
+      yeButtonValue: ''
     }
   },
-  methods: {},
+  methods: {
+    yeButtonFct () {
+      if (this.yeButtonValue === '') {
+        this.yeButtonValue = 'The button was pushed!'
+      } else {
+        this.yeButtonValue = ''
+      }
+    }
+  },
   computed: {},
   watch: {},
 

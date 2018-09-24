@@ -1,6 +1,11 @@
 <template>
   <div class="container">
-    <textarea class="yetextarea text-form" rows="1" wrap="hard"></textarea>
+    <textarea class="yetextarea text-form"
+              rows="1"
+              wrap="soft"
+              :placeholder="this.placeholder || ''"
+              :value="value"
+              @input="$emit('input', $event.target.value)"></textarea>
     <div class="form-border-bot"/>
   </div>
 </template>
@@ -10,7 +15,7 @@
 export default {
   name: '',
   components: {},
-  props: ['value'],
+  props: ['value', 'placeholder'],
   data () {
     return {}
   },
