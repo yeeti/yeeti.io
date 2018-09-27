@@ -18,7 +18,7 @@ Because the world needs pretty, modern and affordable websites.
 ---------------------
 A library of view component, easily customizable and versatile.
 - Input text [X]
-- Button
+- Button [X]
 - Switch on / off
 - Badges
 - Tags

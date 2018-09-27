@@ -25,6 +25,14 @@
         <p>{{ `Value: ${yeButtonValue}` }}</p>
       </div>
     </Section>
+
+    <!-- YeSwitch -->
+    <Section title="YeButton" bgColor="var(--main-color)">
+      <div class="">
+        <YeSwitch v-model="yeSwitchValue"/>
+        <p>{{ `Value: ${yeSwitchValue}` }}</p>
+      </div>
+    </Section>
   </div>
 </template>
 
@@ -32,19 +40,21 @@
 
 import Header from '@/components/Header'
 import Section from '@/components/Section'
+import YeSwitch from '@/components/YeSwitch'
 import YeButton from '@/components/YeButton'
 import YeTextbox from '@/components/YeTextbox'
 import YeTextarea from '@/components/YeTextarea'
 
 export default {
   name: '',
-  components: { Section, Header, YeTextbox, YeTextarea, YeButton },
+  components: { Section, Header, YeTextbox, YeTextarea, YeButton, YeSwitch },
   props: [],
   data () {
     return {
       yeTextboxValue: '',
       yeTextareaValue: '',
-      yeButtonValue: ''
+      yeButtonValue: '',
+      yeSwitchValue: false
     }
   },
   methods: {
