@@ -2,7 +2,10 @@
   <div class="">
     <div class="yeswitch" @click="toggle">
       <!-- TO SWITCH BG COLOR: 2 DIVS, left and right of knob, overflow hidden -->
-      <div class="knob" @click="toggle"/>
+      <div class="knob" @click="toggle">
+        <div class="switch-off"/>
+        <div class="switch-on"/>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +67,7 @@ export default {
     background-color: lightgrey;
     border-radius: 30px;
     transition: background-color 0.3s;
+    overflow: hidden;
   }
 
   .knob {
@@ -77,5 +81,13 @@ export default {
     left: -2px;
     top: -2px;
     transition: left 0.3s;
+  }
+
+  .switch-off {
+
+  }
+
+  .Switch-on {
+
   }
 </style>
